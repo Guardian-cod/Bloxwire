@@ -139,6 +139,17 @@ ${extraHead}
     <nav class="nav" aria-label="Sections">${nav}</nav>
   </div>
 </header>
+<div class="rail rail-left" aria-hidden="true">
+  <div class="obby">
+    <span class="plat p1"></span><span class="plat p2"></span><span class="plat p3"></span><span class="plat p4"></span><span class="plat p5"></span>
+    <span class="flag"></span>
+    <span class="coin c1"></span><span class="coin c2"></span><span class="coin c3"></span>
+    <span class="bot"><svg viewBox="0 0 28 44" width="28" height="44"><rect x="4" y="0" width="20" height="16" rx="3" fill="#2557E8"/><rect x="7" y="5" width="14" height="5" rx="2" fill="#F6C83A"/><rect x="2" y="17" width="24" height="14" rx="2" fill="#FFFFFF"/><rect x="11" y="20" width="6" height="6" rx="1" fill="#E8424F"/><rect x="0" y="17" width="4" height="12" rx="2" fill="#2557E8"/><rect x="24" y="17" width="4" height="12" rx="2" fill="#2557E8"/><rect x="4" y="31" width="9" height="13" rx="2" fill="#18203D"/><rect x="15" y="31" width="9" height="13" rx="2" fill="#18203D"/></svg></span>
+  </div>
+</div>
+<div class="rail rail-right" aria-hidden="true">
+  <div class="stack">${[1,2,3,4,5,6,7].map((i) => `<span class="drop d${i}"></span>`).join('')}<span class="baseplate"></span></div>
+</div>
 <main id="main">
 ${body}
 </main>
@@ -299,7 +310,7 @@ ${p.html}
   </section>
 </article>`;
   write(`posts/${p.slug}/index.html`, layout({
-    title: p.title, description: p.description, pathname: p.url, body, type: 'article',
+    title: p.title, description: p.description, pathname: p.url, body, type: 'article', bodyClass: 'is-post',
     extraHead: `<meta property="article:published_time" content="${p.date}">\n<script type="application/ld+json">${ld.replace(/</g, '\\u003c')}</script>`,
   }));
 });
