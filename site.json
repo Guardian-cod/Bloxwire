@@ -1,0 +1,16 @@
+{
+  "title": "Bloxwire",
+  "tagline": "What's blowing up on Roblox, what changed this week, and what's actually worth your time.",
+  "description": "Bloxwire tracks the Roblox games that are trending right now: weekly charts, update breakdowns, event guides and hidden gems.",
+  "url": "https://guardian-cod.github.io",
+  "basePath": "/bloxwire",
+  "customDomain": "",
+  "language": "en",
+  "author": "Bloxwire",
+  "categories": {
+    "trending": { "name": "Trending", "blurb": "The games everyone is jumping into right now, and why." },
+    "updates": { "name": "Updates & Events", "blurb": "What big updates and limited-time events actually add." },
+    "guides": { "name": "Guides", "blurb": "Practical tips to get further, faster." },
+    "hidden-gems": { "name": "Hidden Gems", "blurb": "Smaller games that deserve more players." }
+  }
+}

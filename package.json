@@ -1,0 +1,10 @@
+{
+  "name": "bloxwire",
+  "private": true,
+  "type": "module",
+  "description": "Bloxwire: a blog about trending Roblox games",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "preview": "node src/build.mjs --drafts && node src/serve.mjs"
+  }
+}
