@@ -129,6 +129,7 @@ ${HAS_OG ? `<meta property="og:image" content="${abs('/og.png')}">\n<meta name="
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lilita+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${u('/style.css')}">
+<script>(function(){var on;try{var v=localStorage.getItem('bw-anim');if(v)on=v==='on';}catch(e){}if(on===undefined)on=!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);if(on)document.documentElement.classList.add('anim-on');})();</script>
 ${extraHead}
 </head>
 <body class="${bodyClass}">
@@ -167,6 +168,8 @@ ${body}
     <p class="footer-fine">Bloxwire is an independent fan site and is not affiliated with or endorsed by Roblox Corporation. Game names belong to their creators. When we write about a game we made ourselves, we say so right there in the article.</p>
   </div>
 </footer>
+<button class="anim-toggle" type="button" aria-pressed="false">Pause animation</button>
+<script>(function(){var b=document.querySelector('.anim-toggle'),r=document.documentElement;if(!b)return;function show(){var on=r.classList.contains('anim-on');b.textContent=on?'\u275A\u275A Pause animation':'\u25B6 Play animation';b.setAttribute('aria-pressed',String(!on));}show();b.addEventListener('click',function(){var on=!r.classList.contains('anim-on');r.classList.toggle('anim-on',on);try{localStorage.setItem('bw-anim',on?'on':'off');}catch(e){}show();});})();</script>
 </body>
 </html>`;
 }

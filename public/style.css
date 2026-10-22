@@ -245,11 +245,12 @@ a:hover { color: var(--blue-deep); }
 }
 
 /* ---------- Side animations (wide screens only) ---------- */
-.rail { display: none; position: fixed; bottom: 32px; width: 160px; height: 520px; pointer-events: none; z-index: 0; --half: 410px; }
+.rail { display: none; position: fixed; top: calc(50% + 20px); transform: translateY(-50%); width: 160px; height: 520px; pointer-events: none; z-index: 0; --half: 410px; }
 .is-post .rail { --half: 360px; }
 .is-home .rail { --half: 560px; }
-.rail-left { left: max(12px, calc(50% - var(--half) - 200px)); }
-.rail-right { right: max(12px, calc(50% - var(--half) - 200px)); }
+.rail-left { left: max(24px, calc((50% - var(--half)) / 2 - 100px)); }
+.rail-right { right: max(24px, calc((50% - var(--half)) / 2 - 100px)); }
+@media (max-height: 640px) { .rail { display: none !important; } }
 main, .footer { position: relative; z-index: 1; }
 @media (min-width: 1180px) { .is-post .rail { display: block; } }
 @media (min-width: 1280px) { body:not(.is-home):not(.is-post) .rail { display: block; } }
@@ -288,19 +289,17 @@ main, .footer { position: relative; z-index: 1; }
 .d6 { left: 56px; width: 66px; bottom: 94px; background: #7A3FD1; color: #7A3FD1; }
 .d7 { left: 40px; width: 66px; bottom: 120px; background: #56D8F0; color: #56D8F0; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .bot { animation: obby-run 11s ease-in-out infinite; }
-  .coin { animation: coin-spin 1.6s linear infinite; }
-  .c2 { animation-delay: -.5s; } .c3 { animation-delay: -1s; }
-  .flag::after { animation: flag-wave 1.4s ease-in-out infinite alternate; }
-  .d1 { animation: drop-1 16s cubic-bezier(.5,0,.75,0) infinite; }
-  .d2 { animation: drop-2 16s cubic-bezier(.5,0,.75,0) infinite; }
-  .d3 { animation: drop-3 16s cubic-bezier(.5,0,.75,0) infinite; }
-  .d4 { animation: drop-4 16s cubic-bezier(.5,0,.75,0) infinite; }
-  .d5 { animation: drop-5 16s cubic-bezier(.5,0,.75,0) infinite; }
-  .d6 { animation: drop-6 16s cubic-bezier(.5,0,.75,0) infinite; }
-  .d7 { animation: drop-7 16s cubic-bezier(.5,0,.75,0) infinite; }
-}
+.anim-on .bot { animation: obby-run 11s ease-in-out infinite; }
+.anim-on .coin { animation: coin-spin 1.6s linear infinite; }
+.anim-on .c2 { animation-delay: -.5s; } .c3 { animation-delay: -1s; }
+.anim-on .flag::after { animation: flag-wave 1.4s ease-in-out infinite alternate; }
+.anim-on .d1 { animation: drop-1 16s cubic-bezier(.5,0,.75,0) infinite; }
+.anim-on .d2 { animation: drop-2 16s cubic-bezier(.5,0,.75,0) infinite; }
+.anim-on .d3 { animation: drop-3 16s cubic-bezier(.5,0,.75,0) infinite; }
+.anim-on .d4 { animation: drop-4 16s cubic-bezier(.5,0,.75,0) infinite; }
+.anim-on .d5 { animation: drop-5 16s cubic-bezier(.5,0,.75,0) infinite; }
+.anim-on .d6 { animation: drop-6 16s cubic-bezier(.5,0,.75,0) infinite; }
+.anim-on .d7 { animation: drop-7 16s cubic-bezier(.5,0,.75,0) infinite; }
 @keyframes obby-run {
   0%, 8%   { transform: translate(26px, -36px); opacity: 1; }
   12%      { transform: translate(66px, -180px); }
@@ -385,3 +384,19 @@ main, .footer { position: relative; z-index: 1; }
   93%, 100% { transform: translateY(0); opacity: 0; }
 }
 .rail-right { overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%); mask-image: linear-gradient(to bottom, transparent 0, #000 22%); }
+
+/* Play/pause button for the side animations */
+.anim-toggle {
+  display: none; position: fixed; left: max(24px, calc((50% - var(--half)) / 2 - 100px)); bottom: 20px; z-index: 2;
+  --half: 410px;
+  font: 700 .85rem/1 var(--body); color: #fff; background: var(--blue);
+  border: 0; border-radius: var(--radius-s); padding: 9px 12px 11px;
+  box-shadow: inset 0 -3px 0 var(--blue-deep); cursor: pointer;
+}
+.anim-toggle:hover { filter: brightness(1.08); }
+.is-post .anim-toggle { --half: 360px; }
+.is-home .anim-toggle { --half: 560px; }
+@media (min-width: 1180px) and (min-height: 641px) { .is-post .anim-toggle { display: inline-flex; gap: 6px; align-items: center; } }
+@media (min-width: 1280px) and (min-height: 641px) { body:not(.is-home):not(.is-post) .anim-toggle { display: inline-flex; gap: 6px; align-items: center; } }
+@media (min-width: 1580px) and (min-height: 641px) { .is-home .anim-toggle { display: inline-flex; gap: 6px; align-items: center; } }
+@media (prefers-color-scheme: dark) { .anim-toggle { background: #3563E9; box-shadow: inset 0 -3px 0 #2148C4; } }
