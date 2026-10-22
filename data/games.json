@@ -1,0 +1,26 @@
+{
+  "_comment": "Games made by the person behind Bloxwire. Every promo shows a disclosure. Set status to \"live\" and fill in url once a game is published on Roblox.",
+  "games": {
+    "trick-or-scream": {
+      "name": "Trick or Scream",
+      "status": "in development",
+      "url": "",
+      "pitch": "Ring doorbells, collect candy and try not to scream: ghosts and monsters can scare the candy right out of your bag. Unlock costumes, explore creepier neighborhoods and build your own haunted house.",
+      "genre": "Halloween, social, building"
+    },
+    "brainrot-fusion-rush": {
+      "name": "Brainrot Fusion Rush",
+      "status": "in development",
+      "url": "",
+      "pitch": "Collect brainrots, steal them from other bases and throw them into the Fusion Machine to create something new. Then survive the Blackout event.",
+      "genre": "Collecting, tycoon"
+    },
+    "gem-rush": {
+      "name": "Gem Rush",
+      "status": "in development",
+      "url": "",
+      "pitch": "A pet game across multiple dimensions: your pets fight hostile mobs and mine gems while you push deeper into stranger worlds.",
+      "genre": "Pets, simulator"
+    }
+  }
+}
