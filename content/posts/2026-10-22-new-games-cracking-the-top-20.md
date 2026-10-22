@@ -3,6 +3,8 @@ title: "Three New Roblox Games That Just Cracked the Top 20"
 description: Anime Dice, Break and Steal an Egg and Huss Valley all launched in August or September. Now they sit next to games that are years old.
 date: 2026-10-22
 category: trending
+cover: [dice, egg, bolt]
+coverBg: updates
 sources:
   - https://rblxstat.com/lists/most-played-roblox-games
   - https://livecounts.nl/roblox-charts/

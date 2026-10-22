@@ -3,6 +3,7 @@ title: Steal An Egg Is Still Roblox's Biggest Game. Here's Why
 description: A pet-stealing simulator from July has more players than Brookhaven, Adopt Me and Blox Fruits combined. How it got there, and whether it's worth your time.
 date: 2026-10-22
 category: trending
+cover: [egg, trophy, arrow]
 sources:
   - https://rblxstat.com/lists/most-played-roblox-games
   - https://livecounts.nl/roblox-charts/

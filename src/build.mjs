@@ -4,6 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseFrontmatter, markdown, escapeHtml as esc } from './md.mjs';
+import { coverSvg, MOTIFS, BACKGROUNDS } from './covers.mjs';
+
+const DEFAULT_COVER = { trending: 'arrow', updates: 'controller', guides: 'trophy', 'hidden-gems': 'star' };
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -47,6 +50,10 @@ const posts = fs.readdirSync(postsDir)
     if (data.description && String(data.description).length > 170) {
       errors.push(`${file}: description is ${String(data.description).length} chars, keep it under 170`);
     }
+    const cover = data.cover ? (Array.isArray(data.cover) ? data.cover : [data.cover]) : [DEFAULT_COVER[data.category] || 'controller'];
+    for (const m of cover) if (!MOTIFS[m]) errors.push(`${file}: unknown cover "${m}" (use: ${Object.keys(MOTIFS).join(', ')})`);
+    if (data.coverBg && !BACKGROUNDS[data.coverBg]) errors.push(`${file}: unknown coverBg "${data.coverBg}" (use: ${Object.keys(BACKGROUNDS).join(', ')})`);
+    data.cover = cover;
     const { html, headings } = markdown(body, { fixUrl });
     const words = body.split(/\s+/).filter(Boolean).length;
     return {
@@ -54,6 +61,7 @@ const posts = fs.readdirSync(postsDir)
       date: String(data.date),
       minutes: Math.max(1, Math.round(words / 220)),
       url: `/posts/${slug}/`,
+      coverUrl: `/covers/${slug}.svg`,
     };
   })
   .filter((p) => includeDrafts || !p.draft)
@@ -156,10 +164,13 @@ ${body}
 function postRow(p) {
   return `<li class="row">
   <a class="row-link" href="${u(p.url)}">
-    <span class="row-cat cat-${esc(p.category)}">${esc(catName(p.category))}</span>
-    <span class="row-title">${esc(p.title)}</span>
-    <span class="row-desc">${esc(p.description)}</span>
-    <span class="row-meta"><time datetime="${p.date}">${fmtDate(p.date)}</time>, ${p.minutes} min read${p.promo ? ', features our own game' : ''}</span>
+    <img class="thumb" src="${u(p.coverUrl)}" alt="" width="120" height="120" loading="lazy">
+    <span class="row-text">
+      <span class="row-cat cat-${esc(p.category)}">${esc(catName(p.category))}</span>
+      <span class="row-title">${esc(p.title)}</span>
+      <span class="row-desc">${esc(p.description)}</span>
+      <span class="row-meta"><time datetime="${p.date}">${fmtDate(p.date)}</time>, ${p.minutes} min read${p.promo ? ', features our own game' : ''}</span>
+    </span>
   </a>
 </li>`;
 }
@@ -169,6 +180,7 @@ function promoBox(key) {
   if (!g) return '';
   const live = g.status === 'live' && g.url;
   return `<aside class="promo" aria-label="Our own game">
+  ${g.cover ? `<img class="promo-art" src="${u(`/covers/game-${key}.svg`)}" alt="" width="1200" height="630" loading="lazy">` : ''}
   <p class="promo-kicker">From the Bloxwire workshop</p>
   <h2 class="promo-name">${esc(g.name)}</h2>
   <p>${esc(g.pitch)}</p>
@@ -216,6 +228,10 @@ ${rows}
 // ---------- Pages ----------
 fs.rmSync(DIST, { recursive: true, force: true });
 copyDir(path.join(ROOT, 'public'), DIST);
+for (const p of posts) write(`covers/${p.slug}.svg`, coverSvg(p.cover, p.coverBg || p.category, p.title));
+for (const [k, g] of Object.entries(games)) {
+  if (g.cover) write(`covers/game-${k}.svg`, coverSvg(g.cover, g.coverBg || 'night', g.name));
+}
 
 // Home
 {
@@ -223,21 +239,24 @@ copyDir(path.join(ROOT, 'public'), DIST);
   const rest = posts.filter((p) => p !== lead);
   const leadHtml = lead ? `<article class="lead">
   <a href="${u(lead.url)}" class="lead-link">
-    <span class="row-cat cat-${esc(lead.category)}">${esc(catName(lead.category))}</span>
-    <h2 class="lead-title">${esc(lead.title)}</h2>
-    <p class="lead-desc">${esc(lead.description)}</p>
-    <p class="row-meta"><time datetime="${lead.date}">${fmtDate(lead.date)}</time>, ${lead.minutes} min read</p>
+    <img class="lead-art" src="${u(lead.coverUrl)}" alt="" width="1200" height="630">
+    <span class="lead-text">
+      <span class="row-cat cat-${esc(lead.category)}">${esc(catName(lead.category))}</span>
+      <span class="lead-title">${esc(lead.title)}</span>
+      <span class="lead-desc">${esc(lead.description)}</span>
+      <span class="row-meta"><time datetime="${lead.date}">${fmtDate(lead.date)}</time>, ${lead.minutes} min read</span>
+    </span>
   </a>
 </article>` : '<p>No stories yet. The first ones are on their way.</p>';
   const body = `<div class="wrap home">
   <section class="intro">
     <h1>${esc(site.tagline)}</h1>
   </section>
+  ${leadHtml}
   <div class="home-grid">
     ${chartBlock()}
     <section class="latest" aria-labelledby="latest-title">
       <h2 id="latest-title" class="section-title">Latest stories</h2>
-      ${leadHtml}
       <ul class="rows">${rest.slice(0, 12).map(postRow).join('\n')}</ul>
     </section>
   </div>
@@ -267,6 +286,7 @@ posts.forEach((p) => {
     <p class="post-deck">${esc(p.description)}</p>
     <p class="row-meta"><time datetime="${p.date}">${fmtDate(p.date)}</time>, ${p.minutes} min read${p.updated ? `, updated ${fmtDate(String(p.updated))}` : ''}</p>
   </header>
+  <img class="post-art" src="${u(p.coverUrl)}" alt="" width="1200" height="630">
   ${toc}
   <div class="prose">
 ${p.html}
@@ -297,6 +317,7 @@ for (const [key, c] of Object.entries(site.categories)) {
 // Games we make
 {
   const cards = Object.entries(games).map(([k, g]) => `<section class="game">
+  ${g.cover ? `<img class="game-art" src="${u(`/covers/game-${k}.svg`)}" alt="" width="1200" height="630" loading="lazy">` : ''}
   <h2>${esc(g.name)}</h2>
   <p class="game-genre">${esc(g.genre)}</p>
   <p>${esc(g.pitch)}</p>

@@ -5,6 +5,8 @@ date: 2026-10-22
 category: updates
 featured: true
 promo: trick-or-scream
+cover: [pumpkin, ghost, controller]
+coverBg: night
 sources:
   - https://endgametools.com/en/roblox/news/roblox-halloween-2026
   - https://allthings.how/the-hollow-roblox-halloween-event-every-confirmed-game/
