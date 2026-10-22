@@ -1,0 +1,17 @@
+{
+  "week": "2026-10-20",
+  "intro": "The ten most-played Roblox games right now. Pumpkins everywhere.",
+  "method": "Ranked by live player counts on the public tracker rblxstat.com (Oct 21, 2026). Counts swing a lot over a day, so close neighbors can swap places hour to hour. This is our first chart; week-over-week movement starts next week.",
+  "entries": [
+    { "rank": 1, "name": "Steal An Egg", "genre": "Simulation", "note": "Still number one by a wide margin, now with a Halloween Dimension.", "post": "steal-an-egg-biggest-game-on-roblox" },
+    { "rank": 2, "name": "Murder Mystery 2", "genre": "Survival", "note": "The 2014 classic is pulling more than 650,000 players at once.", "url": "https://www.roblox.com/games/142823291/Murder-Mystery-2" },
+    { "rank": 3, "name": "Brookhaven RP", "genre": "Roleplay", "note": "Its Halloween trick-or-treating update lands Oct 23.", "post": "roblox-halloween-2026-the-hollow-events" },
+    { "rank": 4, "name": "Adopt Me!", "genre": "Roleplay", "note": "Week 4 of its Halloween update starts Oct 23." },
+    { "rank": 5, "name": "Steal a Brainrot", "genre": "Simulation", "note": "Far below its 2025 peaks, but still top five." },
+    { "rank": 6, "name": "RIVALS", "genre": "Shooter", "note": "RIVALSWEEN runs until early November." },
+    { "rank": 7, "name": "Jujutsu Shenanigans", "genre": "Action", "note": "Its delayed Halloween update is set for Oct 23." },
+    { "rank": 8, "name": "99 Nights in the Forest", "genre": "Survival", "note": "One of nine games in Roblox's The Hollow event." },
+    { "rank": 9, "name": "Blox Fruits", "genre": "RPG", "note": "Steady as ever, no Halloween event listed yet." },
+    { "rank": 10, "name": "Dress To Impress", "genre": "Roleplay", "note": "Its big Halloween and fall update runs until Nov 7." }
+  ]
+}

@@ -182,8 +182,9 @@ function promoBox(key) {
 function chartBlock() {
   if (!chart || !chart.entries?.length) return '';
   const rows = chart.entries.map((e) => {
-    let move = '<span class="move move-new">New</span>';
-    if (e.prev) {
+    let move = '';
+    if (e.prev === null) move = '<span class="move move-new">New</span>';
+    else if (typeof e.prev === 'number') {
       const d = e.prev - e.rank;
       move = d > 0 ? `<span class="move move-up" title="Up ${d}">&#9650; ${d}</span>`
         : d < 0 ? `<span class="move move-down" title="Down ${-d}">&#9660; ${-d}</span>`
@@ -218,7 +219,8 @@ copyDir(path.join(ROOT, 'public'), DIST);
 
 // Home
 {
-  const [lead, ...rest] = posts;
+  const lead = posts.find((p) => p.featured) || posts[0];
+  const rest = posts.filter((p) => p !== lead);
   const leadHtml = lead ? `<article class="lead">
   <a href="${u(lead.url)}" class="lead-link">
     <span class="row-cat cat-${esc(lead.category)}">${esc(catName(lead.category))}</span>
