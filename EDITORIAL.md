@@ -95,6 +95,7 @@ title: Why Everyone Is Playing Example Game Right Now
 description: One or two sentences, under 170 characters, that make someone want to click.
 date: 2026-10-27
 category: trending
+cover: [arrow, trophy]
 promo: trick-or-scream
 sources:
   - https://example.com/article-one
@@ -106,7 +107,18 @@ First paragraph...
 Text...
 ```
 
-Optional fields: `promo`, `updated` (YYYY-MM-DD), `draft: true` (hides the post).
+**Cover image (always set it):** every post gets brick-mosaic cover art, built
+from the motifs in `src/covers.mjs`. Pick 1–3 motifs that match the topic, main
+motif first, e.g. `cover: [pumpkin, ghost, controller]`. Available motifs:
+pumpkin, egg, dice, ghost, trophy, bolt, arrow, house, fish, sword, star, brain,
+gem, controller (each has a `use` note in the file). Optional `coverBg`:
+trending, updates, guides, hidden-gems or night (default: the post's category;
+use `night` for horror/Halloween). Vary motifs between posts so the front page
+doesn't repeat the same picture. You may add a new motif to `src/covers.mjs` if
+nothing fits (a small pixel grid + palette, original artwork only: never
+recreate a game's logo, character or other copyrighted art).
+
+Optional fields: `cover`, `coverBg`, `promo`, `updated` (YYYY-MM-DD), `draft: true` (hides the post).
 Internal links start with `/` (e.g. `/category/guides/`); the build adds the base path.
 Markdown supported: headings, paragraphs, lists, `> quotes`, **bold**, *italic*,
 links, `---` rules. For a highlighted box use a raw HTML line:
