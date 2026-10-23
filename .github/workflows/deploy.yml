@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    # Rebuild every 30 minutes so the chart's "playing now" counts stay fresh.
+    - cron: '7,37 * * * *'
 
 permissions:
   contents: read
@@ -27,6 +30,9 @@ jobs:
         id: pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
+      - name: Fetch live player counts from Roblox
+        if: github.event_name != 'pull_request'
+        run: node src/live.mjs
       - name: Build site
         env:
           SITE_URL: ${{ steps.pages.outputs.origin }}
