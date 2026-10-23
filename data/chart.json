@@ -3,7 +3,7 @@
   "intro": "The ten most-played Roblox games right now. Pumpkins everywhere.",
   "method": "Ranked by live player counts on the public tracker rblxstat.com (Oct 21, 2026). Counts swing a lot over a day, so close neighbors can swap places hour to hour. This is our first chart; week-over-week movement starts next week.",
   "entries": [
-    { "rank": 1, "name": "Steal An Egg", "genre": "Simulation", "note": "Still number one by a wide margin, now with a Halloween Dimension.", "post": "steal-an-egg-biggest-game-on-roblox" },
+    { "rank": 1, "name": "Steal An Egg", "placeId": 107778070777162, "genre": "Simulation", "note": "Still number one by a wide margin, now with a Halloween Dimension.", "post": "steal-an-egg-biggest-game-on-roblox" },
     { "rank": 2, "name": "Murder Mystery 2", "placeId": 142823291, "genre": "Survival", "note": "The 2014 classic is pulling more than 650,000 players at once.", "url": "https://www.roblox.com/games/142823291/Murder-Mystery-2" },
     { "rank": 3, "name": "Brookhaven RP", "placeId": 4924922222, "genre": "Roleplay", "note": "Its Halloween trick-or-treating update lands Oct 23.", "post": "roblox-halloween-2026-the-hollow-events" },
     { "rank": 4, "name": "Adopt Me!", "placeId": 920587237, "genre": "Roleplay", "note": "Week 4 of its Halloween update starts Oct 23." },
