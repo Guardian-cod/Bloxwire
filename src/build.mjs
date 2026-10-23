@@ -15,6 +15,9 @@ const readJson = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 const site = readJson('site.json');
 const games = readJson('data/games.json').games;
 const chart = fs.existsSync(path.join(ROOT, 'data/chart.json')) ? readJson('data/chart.json') : null;
+// Live player counts written by src/live.mjs in CI. Ignored if missing or older than 6 hours.
+let live = fs.existsSync(path.join(ROOT, 'data/live.json')) ? readJson('data/live.json') : null;
+if (live && !(Date.now() - Date.parse(live.fetchedAt) < 6 * 3600e3)) live = null;
 
 // URL setup. Priority: env (set by GitHub Actions) > customDomain > site.json
 if (site.customDomain) { site.url = `https://${site.customDomain}`; site.basePath = ''; }
@@ -170,6 +173,7 @@ ${body}
 </footer>
 <button class="anim-toggle" type="button" aria-pressed="false">Pause animation</button>
 <script>(function(){var b=document.querySelector('.anim-toggle'),r=document.documentElement;if(!b)return;function show(){var on=r.classList.contains('anim-on');b.textContent=on?'\u275A\u275A Pause animation':'\u25B6 Play animation';b.setAttribute('aria-pressed',String(!on));}show();b.addEventListener('click',function(){var on=!r.classList.contains('anim-on');r.classList.toggle('anim-on',on);try{localStorage.setItem('bw-anim',on?'on':'off');}catch(e){}show();});})();</script>
+${site.goatcounter ? `<script data-goatcounter="https://${esc(site.goatcounter)}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>` : ''}
 </body>
 </html>`;
 }
@@ -216,6 +220,8 @@ function chartBlock() {
         : d < 0 ? `<span class="move move-down" title="Down ${-d}">&#9660; ${-d}</span>`
         : '<span class="move move-same" title="No change">&#9644;</span>';
     }
+    const now = live && e.placeId && live.games?.[e.placeId];
+    const playing = now ? `<p class="chart-live"><span class="live-dot" aria-hidden="true"></span>${now.playing.toLocaleString('en-US')} playing now</p>` : '';
     const name = e.post ? `<a href="${u(`/posts/${e.post}/`)}">${esc(e.name)}</a>`
       : e.url ? `<a href="${esc(e.url)}" rel="noopener" target="_blank">${esc(e.name)}</a>` : esc(e.name);
     return `<li class="chart-row">
@@ -223,6 +229,7 @@ function chartBlock() {
   <div class="chart-body">
     <p class="chart-name">${name}</p>
     <p class="chart-note">${esc(e.note)}</p>
+    ${playing}
   </div>
   <div class="chart-side">${move}<span class="chart-genre">${esc(e.genre || '')}</span></div>
 </li>`;
@@ -236,6 +243,7 @@ function chartBlock() {
 ${rows}
   </ol>
   ${chart.method ? `<p class="chart-method">${esc(chart.method)}</p>` : ''}
+  ${live && Object.keys(live.games || {}).length ? `<p class="chart-method">"Playing now" comes straight from Roblox and was last updated ${new Date(live.fetchedAt).toISOString().slice(11, 16)} UTC on ${fmtDate(live.fetchedAt.slice(0, 10))}. The ranking itself is set once a week.</p>` : ''}
 </section>`;
 }
 
@@ -360,7 +368,9 @@ for (const [key, c] of Object.entries(site.categories)) {
     </ul>
     <h2 id="our-own-games">Our own games</h2>
     <p>Bloxwire is run by a Roblox developer. Now and then we write about one of <a href="/games/">our own games</a>, but only when it fits the topic, and always with a clear note. No paid placements.</p>
-    <h2 id="not-official">Not official</h2>
+    ${site.goatcounter ? `<h2 id="privacy">Privacy</h2>
+    <p>We count page views with GoatCounter, which uses no cookies and collects no personal data. We only see totals, like how many people read a post.</p>
+    ` : ''}<h2 id="not-official">Not official</h2>
     <p>Bloxwire is an independent fan site. It is not affiliated with or endorsed by Roblox Corporation.</p>
   </div>
 </div>`;
