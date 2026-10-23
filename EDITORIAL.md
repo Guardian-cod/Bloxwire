@@ -43,6 +43,11 @@ On the **first run of each week (Tuesday)**, refresh the chart:
 - Set `week` to that Tuesday's date, move each old `rank` into `prev`
   (use `null` for new entries), update `note` (one short line, why it matters this week),
   and set `post` to a post slug only if that post exists.
+- Give every entry a `placeId`: the number in the game's official
+  `roblox.com/games/<placeId>/...` URL, taken from a page you read in this run.
+  The site uses it to show live "playing now" counts (fetched from Roblox every
+  30 minutes by `src/live.mjs` in CI). If the Roblox name doesn't match the chart
+  `name`, the count is skipped, so keep `name` close to the official game name.
 - Keep `intro` and `method` short and accurate.
 
 ## 4. Our own games (promotion rules)
