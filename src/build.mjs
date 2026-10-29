@@ -203,10 +203,11 @@ function promoBox(key) {
   <p class="promo-kicker">From the Bloxwire workshop</p>
   <h2 class="promo-name">${esc(g.name)}</h2>
   <p>${esc(g.pitch)}</p>
+  ${g.perk ? `<p class="promo-perk">${esc(g.perk)}${site.community?.url ? ` <a href="${esc(site.community.url)}" rel="noopener" target="_blank">Join ${esc(site.community.name)}</a>` : ''}</p>` : ''}
   ${live
     ? `<p><a class="button" href="${esc(g.url)}" rel="noopener" target="_blank">Play ${esc(g.name)} on Roblox</a></p>`
     : `<p class="promo-status">Still in development. We'll post here the day it goes live.</p>`}
-  ${site.community?.url ? `<p class="promo-community"><a href="${esc(site.community.url)}" rel="noopener" target="_blank">Join ${esc(site.community.name)} on Roblox</a> to hear first when it launches.</p>` : ''}
+  ${site.community?.url && !g.perk ? `<p class="promo-community"><a href="${esc(site.community.url)}" rel="noopener" target="_blank">Join ${esc(site.community.name)} on Roblox</a> ${live ? 'for updates, events and codes.' : 'to hear first when it launches.'}</p>` : ''}
   <p class="promo-disclosure">Full disclosure: this game is made by the person who runs Bloxwire. We only mention it where it genuinely fits the topic.</p>
 </aside>`;
 }
@@ -345,6 +346,7 @@ for (const [key, c] of Object.entries(site.categories)) {
   <h2>${esc(g.name)}</h2>
   <p class="game-genre">${esc(g.genre)}</p>
   <p>${esc(g.pitch)}</p>
+  ${g.perk ? `<p class="promo-perk">${esc(g.perk)}</p>` : ''}
   ${g.status === 'live' && g.url ? `<p><a class="button" href="${esc(g.url)}" rel="noopener" target="_blank">Play on Roblox</a></p>` : '<p class="promo-status">In development</p>'}
   ${posts.some((p) => p.promo === k) ? `<p><a href="${u('/')}#latest-title">Stories that mention it</a></p>` : ''}
 </section>`).join('\n');
