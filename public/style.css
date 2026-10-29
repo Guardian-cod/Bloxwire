@@ -1,3 +1,9 @@
+/* Fonts are hosted on this site (no Google Fonts requests). Both are SIL Open Font License, see fonts/*-OFL.txt */
+@font-face { font-family: "Lilita One"; src: url("fonts/LilitaOne-Regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/AtkinsonHyperlegible-Regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/AtkinsonHyperlegible-Bold.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/AtkinsonHyperlegible-Italic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
+
 /* Bloxwire: cool baseplate, navy ink, cobalt and "new yeller" bricks. */
 :root {
   --base: #EEF1F7;

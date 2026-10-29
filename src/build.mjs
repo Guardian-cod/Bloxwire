@@ -128,9 +128,8 @@ ${HAS_OG ? `<meta property="og:image" content="${abs('/og.png')}">\n<meta name="
 <meta name="theme-color" content="#2557E8">
 <link rel="icon" href="${u('/favicon.svg')}" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.title)}" href="${u('/rss.xml')}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="preload" href="${u('/fonts/LilitaOne-Regular.woff')}" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="${u('/fonts/AtkinsonHyperlegible-Regular.woff')}" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="${u('/style.css')}">
 <script>(function(){var on;try{var v=localStorage.getItem('bw-anim');if(v)on=v==='on';}catch(e){}if(on===undefined)on=!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);if(on)document.documentElement.classList.add('anim-on');})();</script>
 ${extraHead}
