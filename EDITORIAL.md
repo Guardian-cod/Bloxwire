@@ -145,3 +145,11 @@ links, `---` rules. For a highlighted box use a raw HTML line:
    chart changed, and a short "Please check" list of anything uncertain.
 5. Finish with a short message for the owner (in **German**): title of the post,
    the PR link, and what to double-check. Merging the PR publishes the post.
+
+## 8. Privacy of the owner
+
+The repository and everything in it is public. Never write the owner's real
+name, age, school, employer, location, email or any other personal detail into
+posts, commits, pull requests, branch names or code. Refer to them only as
+"the person who runs Bloxwire". Commits are made as Claude, never with the
+owner's email.
