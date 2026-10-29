@@ -166,6 +166,7 @@ ${body}
     <div>
       <p><a href="${u('/about/')}">About Bloxwire</a></p>
       <p><a href="${u('/games/')}">Games we make</a></p>
+      ${site.community?.url ? `<p><a href="${esc(site.community.url)}" rel="noopener" target="_blank">Our Roblox community</a></p>` : ''}
       <p><a href="${u('/rss.xml')}">RSS feed</a></p>
     </div>
     <p class="footer-fine">Bloxwire is an independent fan site and is not affiliated with or endorsed by Roblox Corporation. Game names belong to their creators. When we write about a game we made ourselves, we say so right there in the article.</p>
@@ -205,6 +206,7 @@ function promoBox(key) {
   ${live
     ? `<p><a class="button" href="${esc(g.url)}" rel="noopener" target="_blank">Play ${esc(g.name)} on Roblox</a></p>`
     : `<p class="promo-status">Still in development. We'll post here the day it goes live.</p>`}
+  ${site.community?.url ? `<p class="promo-community"><a href="${esc(site.community.url)}" rel="noopener" target="_blank">Join ${esc(site.community.name)} on Roblox</a> to hear first when it launches.</p>` : ''}
   <p class="promo-disclosure">Full disclosure: this game is made by the person who runs Bloxwire. We only mention it where it genuinely fits the topic.</p>
 </aside>`;
 }
@@ -348,6 +350,7 @@ for (const [key, c] of Object.entries(site.categories)) {
 </section>`).join('\n');
   const body = `<div class="wrap listing">
   <header class="listing-head"><h1>Games we make</h1><p>The person behind Bloxwire also builds Roblox games. These are ours. Whenever one shows up in an article, it comes with a clear note saying so.</p></header>
+  ${site.community?.url ? `<section class="community-box"><div><h2>${esc(site.community.name)}</h2><p>${esc(site.community.blurb || '')}</p></div><p><a class="button" href="${esc(site.community.url)}" rel="noopener" target="_blank">Join the community on Roblox</a></p></section>` : ''}
   <div class="games">${cards}</div>
 </div>`;
   write('games/index.html', layout({ title: 'Games we make', description: 'Roblox games made by the person behind Bloxwire.', pathname: '/games/', body }));

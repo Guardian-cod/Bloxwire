@@ -6,12 +6,29 @@
   "basePath": "/Bloxwire",
   "customDomain": "",
   "goatcounter": "",
+  "community": {
+    "name": "4ndr1n. Creations",
+    "url": "https://www.roblox.com/communities/910448142",
+    "blurb": "News about our games, updates, events and codes, straight from the developer."
+  },
   "language": "en",
   "author": "Bloxwire",
   "categories": {
-    "trending": { "name": "Trending", "blurb": "The games everyone is jumping into right now, and why." },
-    "updates": { "name": "Updates & Events", "blurb": "What big updates and limited-time events actually add." },
-    "guides": { "name": "Guides", "blurb": "Practical tips to get further, faster." },
-    "hidden-gems": { "name": "Hidden Gems", "blurb": "Smaller games that deserve more players." }
+    "trending": {
+      "name": "Trending",
+      "blurb": "The games everyone is jumping into right now, and why."
+    },
+    "updates": {
+      "name": "Updates & Events",
+      "blurb": "What big updates and limited-time events actually add."
+    },
+    "guides": {
+      "name": "Guides",
+      "blurb": "Practical tips to get further, faster."
+    },
+    "hidden-gems": {
+      "name": "Hidden Gems",
+      "blurb": "Smaller games that deserve more players."
+    }
   }
 }
