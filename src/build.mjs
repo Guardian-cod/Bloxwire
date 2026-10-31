@@ -126,6 +126,7 @@ function layout({ title, description, pathname, body, type = 'website', extraHea
 <meta property="og:url" content="${abs(pathname)}">
 ${HAS_OG ? `<meta property="og:image" content="${abs('/og.png')}">\n<meta name="twitter:card" content="summary_large_image">` : ''}
 <meta name="theme-color" content="#2557E8">
+${site.googleSiteVerification ? `<meta name="google-site-verification" content="${esc(site.googleSiteVerification)}">` : ''}
 <link rel="icon" href="${u('/favicon.svg')}" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.title)}" href="${u('/rss.xml')}">
 <link rel="preload" href="${u('/fonts/LilitaOne-Regular.woff')}" as="font" type="font/woff" crossorigin>
