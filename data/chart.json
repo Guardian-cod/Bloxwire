@@ -1,17 +1,17 @@
 {
-  "week": "2026-10-27",
-  "intro": "The ten most-played Roblox games this week. Murder Mystery 2 had a wild weekend.",
-  "method": "Ranked by player counts on the public tracker Endgametools (snapshot Oct 26, 2026, 10:08 UTC), cross-checked with Livecounts. Counts swing a lot: Murder Mystery 2 was briefly No. 1 on Oct 25 and back at No. 4 a day later.",
+  "week": "2026-11-03",
+  "intro": "The ten most-played Roblox games this week. Halloween is over, Practical Basketball is in, and Steal a Brainrot drops out.",
+  "method": "Ranked by player counts on the public tracker Endgametools (snapshot Nov 3, 2026, 02:34 UTC), cross-checked with Livecounts (Nov 3, 11:03 UTC). The two disagree in places: Livecounts had Blox Fruits at No. 2 and did not list Practical Basketball in its top 25.",
   "entries": [
-    { "rank": 1, "prev": 1, "name": "Steal An Egg", "placeId": 107778070777162, "genre": "Simulation", "note": "Back on top after Murder Mystery 2 briefly passed it on Oct 25.", "post": "steal-an-egg-biggest-game-on-roblox" },
-    { "rank": 2, "prev": 3, "name": "Brookhaven RP", "placeId": 4924922222, "genre": "Roleplay", "note": "Steady at about 300,000 players on Oct 26.", "post": "roblox-halloween-2026-the-hollow-events" },
-    { "rank": 3, "prev": 5, "name": "Steal a Brainrot", "placeId": 109983668079237, "genre": "Simulation", "note": "Up two spots, with about 277,000 players on Oct 26." },
-    { "rank": 4, "prev": 2, "name": "Murder Mystery 2", "placeId": 142823291, "genre": "Survival", "note": "Hit a record of about 2.2 million players at once on Oct 25 (Livecounts).", "post": "murder-mystery-2-halloween-2026-guide" },
-    { "rank": 5, "prev": 8, "name": "99 Nights in the Forest", "placeId": 79546208627805, "genre": "Survival", "note": "Up three, with about 205,000 players on Oct 26." },
-    { "rank": 6, "prev": 4, "name": "Adopt Me!", "placeId": 920587237, "genre": "Roleplay", "note": "The final week of Halloween brings back the Where Bear? minigame." },
-    { "rank": 7, "prev": 6, "name": "RIVALS", "placeId": 17625359962, "genre": "Shooter", "note": "RIVALSWEEN runs until Nov 6; unspent Candy is deleted after." },
-    { "rank": 8, "prev": null, "name": "Break and Steal an Egg", "placeId": 114326934417838, "genre": "Simulation", "note": "One of only two top-25 games growing in Livecounts' 24-hour change.", "post": "new-games-cracking-the-top-20" },
-    { "rank": 9, "prev": 9, "name": "Blox Fruits", "placeId": 2753915549, "genre": "RPG", "note": "Holding steady at about 145,000 players on Oct 26." },
-    { "rank": 10, "prev": 7, "name": "Jujutsu Shenanigans", "placeId": 9391468976, "genre": "Action", "note": "Down three spots, about 95,000 players on Oct 26." }
+    { "rank": 1, "prev": 1, "name": "Steal An Egg", "placeId": 107778070777162, "genre": "Simulation", "note": "Still No. 1 by a mile, with about 586,000 players on Nov 3.", "post": "steal-an-egg-biggest-game-on-roblox" },
+    { "rank": 2, "prev": 4, "name": "Murder Mystery 2", "placeId": 142823291, "genre": "Survival", "note": "Back up to No. 2 with about 307,000 players on Nov 3.", "post": "murder-mystery-2-halloween-2026-guide" },
+    { "rank": 3, "prev": 2, "name": "Brookhaven RP", "placeId": 4924922222, "genre": "Roleplay", "note": "Rock steady at about 302,000 players on Nov 3.", "post": "roblox-halloween-2026-the-hollow-events" },
+    { "rank": 4, "prev": 9, "name": "Blox Fruits", "placeId": 2753915549, "genre": "RPG", "note": "Up five spots; Livecounts even had it at No. 2 later on Nov 3." },
+    { "rank": 5, "prev": 6, "name": "Adopt Me!", "placeId": 920587237, "genre": "Roleplay", "note": "Up one, with about 147,000 players on Nov 3." },
+    { "rank": 6, "prev": 7, "name": "RIVALS", "placeId": 17625359962, "genre": "Shooter", "note": "Up one, with about 131,000 players on Nov 3." },
+    { "rank": 7, "prev": null, "name": "Practical Basketball", "placeId": 80681221431821, "genre": "Sports", "note": "New: left testing on Oct 30 and hit an all-time peak of about 147,000 players.", "post": "practical-basketball-full-release-guide" },
+    { "rank": 8, "prev": 10, "name": "Jujutsu Shenanigans", "placeId": 9391468976, "genre": "Action", "note": "Up two, with about 99,000 players on Nov 3." },
+    { "rank": 9, "prev": 8, "name": "Break and Steal an Egg", "placeId": 114326934417838, "genre": "Simulation", "note": "Livecounts showed it up 66.5% in 24 hours on Nov 3.", "post": "new-games-cracking-the-top-20" },
+    { "rank": 10, "prev": 5, "name": "99 Nights in the Forest", "placeId": 79546208627805, "genre": "Survival", "note": "Down five, with about 93,000 players on Nov 3." }
   ]
 }
