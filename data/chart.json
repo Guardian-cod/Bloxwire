@@ -1,17 +1,17 @@
 {
-  "week": "2026-11-17",
-  "intro": "The ten most-played Roblox games this week. Brookhaven jumps to No. 2, Throw Food For Animals keeps climbing, Murder Mystery 2 cools off after Halloween, and Jujutsu Shenanigans is new.",
-  "method": "Ranked by player counts on the public tracker Endgametools (snapshot Nov 16, 2026, 22:23 UTC), cross-checked with Livecounts (Nov 17, 12:06 UTC) and Rokoala (Nov 17, 03:52 UTC). The trackers disagree in places: Livecounts had Throw Food For Animals at No. 2 and Break and Steal an Egg at No. 8.",
+  "week": "2026-11-24",
+  "intro": "The ten most-played Roblox games this week. Blox Fruits passes Adopt Me!, Dandy's World jumps three places after its 1.0 launch, and the relaunched Anime Crusaders X is new at No. 10.",
+  "method": "Ranked by player counts on the public tracker Endgametools (snapshot Nov 24, 2026, 00:46 UTC), cross-checked with Livecounts (latest update 13:13 UTC, read Nov 24). The trackers disagree in places: Livecounts had Throw Food For Animals at No. 4, 99 Nights in the Forest at No. 6 and Dandy's World at No. 10.",
   "entries": [
-    { "rank": 1, "prev": 1, "name": "Steal An Egg", "placeId": 107778070777162, "genre": "Simulation", "note": "Still No. 1 by a mile, with about 514,000 players on Nov 16.", "post": "steal-an-egg-biggest-game-on-roblox" },
-    { "rank": 2, "prev": 3, "name": "Brookhaven RP", "placeId": 4924922222, "genre": "Roleplay", "note": "Up one, with about 334,000 players on Nov 16." },
-    { "rank": 3, "prev": 5, "name": "Adopt Me!", "placeId": 920587237, "genre": "Roleplay", "note": "Up two, with about 228,000 players on Endgametools' latest reading." },
-    { "rank": 4, "prev": 4, "name": "Blox Fruits", "placeId": 2753915549, "genre": "RPG", "note": "Holding No. 4 with about 209,000 players." },
-    { "rank": 5, "prev": 6, "name": "Throw Food For Animals", "placeId": 120219252362013, "genre": "Simulation", "note": "Still climbing: about 208,000 players on Nov 16, and No. 2 on Livecounts on Nov 17.", "post": "throw-food-for-animals-roblox" },
-    { "rank": 6, "prev": 2, "name": "Murder Mystery 2", "placeId": 142823291, "genre": "Survival", "note": "Down four after Halloween, with about 121,000 players on Nov 16.", "post": "murder-mystery-2-halloween-2026-guide" },
-    { "rank": 7, "prev": 7, "name": "RIVALS", "placeId": 17625359962, "genre": "Shooter", "note": "Unchanged at No. 7 with about 108,000 players." },
-    { "rank": 8, "prev": 10, "name": "99 Nights in the Forest", "placeId": 79546208627805, "genre": "Survival", "note": "Up two, with about 105,000 players." },
-    { "rank": 9, "prev": null, "name": "Jujutsu Shenanigans", "placeId": 9391468976, "genre": "Fighting", "note": "New: the anime fighter had about 80,000 players on Nov 16." },
-    { "rank": 10, "prev": 9, "name": "Dandy's World [ALPHA]", "placeId": 16116270224, "genre": "Horror", "note": "Down one with about 69,000 players on Endgametools' latest reading.", "post": "dandys-world-1-0-update-november-20" }
+    { "rank": 1, "prev": 1, "name": "Steal An Egg", "placeId": 107778070777162, "genre": "Simulation", "note": "Still No. 1 by a mile, with about 517,000 players on Nov 24.", "post": "steal-an-egg-biggest-game-on-roblox" },
+    { "rank": 2, "prev": 2, "name": "Brookhaven RP", "placeId": 4924922222, "genre": "Roleplay", "note": "Holding No. 2 with about 342,000 players." },
+    { "rank": 3, "prev": 4, "name": "Blox Fruits", "placeId": 2753915549, "genre": "RPG", "note": "Up one, with about 248,000 players on Nov 24." },
+    { "rank": 4, "prev": 3, "name": "Adopt Me!", "placeId": 920587237, "genre": "Roleplay", "note": "Down one, but close behind with about 242,000 players." },
+    { "rank": 5, "prev": 5, "name": "Throw Food For Animals", "placeId": 120219252362013, "genre": "Simulation", "note": "Holding No. 5 with about 158,000 players; Livecounts has it at No. 4.", "post": "throw-food-for-animals-roblox" },
+    { "rank": 6, "prev": 6, "name": "Murder Mystery 2", "placeId": 142823291, "genre": "Survival", "note": "Steady at No. 6 with about 147,000 players." },
+    { "rank": 7, "prev": 10, "name": "Dandy's World [1.0]", "placeId": 16116270224, "genre": "Horror", "note": "Up three after leaving alpha, with about 139,000 players on Nov 24.", "post": "dandys-world-1-0-update-november-20" },
+    { "rank": 8, "prev": 8, "name": "99 Nights in the Forest", "placeId": 79546208627805, "genre": "Survival", "note": "Holding No. 8 with about 128,000 players." },
+    { "rank": 9, "prev": 7, "name": "RIVALS", "placeId": 17625359962, "genre": "Shooter", "note": "Down two, with about 113,000 players." },
+    { "rank": 10, "prev": null, "name": "Anime Crusaders X", "placeId": 107573139811370, "genre": "Tower Defense", "note": "New: relaunched in mid-November, now about 94,000 players.", "post": "anime-crusaders-x-comeback" }
   ]
 }
